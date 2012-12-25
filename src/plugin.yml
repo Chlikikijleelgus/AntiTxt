@@ -1,0 +1,30 @@
+author: Chlikikijleelgus
+database: false
+description: "Forbids text speak based off of 'words' in a config file\r\n"
+generator: http://dinnerbone.com/minecraft/tools/pluginator/
+main: me.chlikikijleelgus.anti_txt.AntiTxt
+name: Anti-Txt
+startup: postworld
+version: '1.1'
+commands:
+  atadd:
+    description: Adds a word to the AntiTxt filter
+    usage: /ATadd <word> Omit trailing spaces
+    permission: AntiTxt.add
+  atrem:
+    description: Removes a word from the AntiTxt filter
+    usage: /ATrem <word> Omit trailing spaces
+    permission: AntiTxt.rem
+  atlist:
+    description: Prints the words in the AntiTxt filter
+    usage: /ATlist
+    default: op
+    permission: AntiTxt.list
+permissions:
+  AntiTxt.*:
+    description: Gives access to all AntiTxt commands
+    children:
+      AntiTxt.add: true
+      AntiTxt.rem: true
+      AntiTxt.list: true
+
